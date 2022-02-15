@@ -1,8 +1,8 @@
-def isEven(num):
+def iseven(num):
     if(num%2==0):
-        print('is even')
+        return 'even'
     else:
-        print('not even')
+        return 'odd'
 
 
-isEven(52)
+
