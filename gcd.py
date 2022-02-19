@@ -1,31 +1,47 @@
-
-class gcd:
+def gcd(num1,num2):
+    #lists where the factors of the first and second number are stored
+    lis1=[]
+    lis2=[]
+    #lists where the divisiors of the first and second number are stored 
+    divisor1 =[]
+    divisor2=[]
+    common_factors =[]
+    max=0
+    #loops to find factors of a number 
+    for i in range(1,num1+1):
+        if(num1%i==0):
+            lis1.append(i)
+        
+    for j in range(1,num2+1):
+        if(num2%j==0):
+            lis2.append(j)
     
-      
-    def __init__(self,num,num2):
-        self.num = number1
-        self.num2 = number2
-    facs = []
-    facs2=[]
-    for i in range(1,number1+1):
-        facs.append(i)
+    for k in lis1:
+        if(num1%k==0):
+            divisor1.append(k)
     
-    for j in range(1,number2+1):
-        facs2.append(j)
+    for l in lis2:
+        if(num2%l==0):
+            divisor2.append(l)
 
-    divisors =[]
-    divisors2 =[]
-  
-
-    for k in facs:
-        if(number1%k==0):
-            divisors.append(i)
+    print(divisor1)
+    print(divisor2)
     
-    for l in facs2:
-        if(number2%l==0):
-            divisors2.append(l)
+    #Loop to find commonfactors
+    for m in divisor1:
+        for n in divisor2:
+         if(m==n):
+            common_factors.append(m)
+    
+    #loop to find the gcd
+    for p in common_factors:
+        if(p>max):
+            max=p
+    return max
 
-    print (divisors,divisors2)
+
+print(gcd(6,8))
 
 
-example2 = gcd(6,8)
+
+
