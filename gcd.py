@@ -1,12 +1,11 @@
 def gcd(num1,num2):
-    #lists where the factors of the first and second number are stored
+    #lists where the divisors of the first and second numbers are stored
     lis1=[]
     lis2=[]
-    #lists where the divisiors of the first and second number are stored 
-    divisor1 =[]
-    divisor2=[]
+    
     common_factors =[]
     max=0
+   
     #loops to find factors of a number 
     for i in range(1,num1+1):
         if(num1%i==0):
@@ -15,21 +14,13 @@ def gcd(num1,num2):
     for j in range(1,num2+1):
         if(num2%j==0):
             lis2.append(j)
-    
-    for k in lis1:
-        if(num1%k==0):
-            divisor1.append(k)
-    
-    for l in lis2:
-        if(num2%l==0):
-            divisor2.append(l)
 
-    print(divisor1)
-    print(divisor2)
+   # print(lis1)
+    #print(lis2)
     
     #Loop to find commonfactors
-    for m in divisor1:
-        for n in divisor2:
+    for m in lis1:
+        for n in lis2:
          if(m==n):
             common_factors.append(m)
     
@@ -37,11 +28,10 @@ def gcd(num1,num2):
     for p in common_factors:
         if(p>max):
             max=p
-    return max
-
-
-print(gcd(6,8))
+    return max, common_factors
+    
 
 
 
 
+# print(gcd(12,8))
